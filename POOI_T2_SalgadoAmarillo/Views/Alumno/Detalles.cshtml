@@ -1,0 +1,22 @@
+﻿@model POOI_T2_SalgadoAmarillo.Models.Alumno
+@{
+    ViewBag.Title = "Detalles del alumno";
+}
+
+<h2>Detalles del alumno</h2>
+<dl>
+    <dt>@Html.DisplayNameFor(m => m.dni)</dt>
+    <dd>@Html.DisplayFor(m => m.dni)</dd>
+    <dt>@Html.DisplayNameFor(m => m.nombres)</dt>
+    <dd>@Html.DisplayFor(m => m.nombres)</dd>
+    <dt>@Html.DisplayNameFor(m => m.apellidos)</dt>
+    <dd>@Html.DisplayFor(m => m.apellidos)</dd>
+    <dt>@Html.DisplayNameFor(m => m.carrera)</dt>
+    <dd>@Html.DisplayFor(m => m.carrera)</dd>
+    <dt>@Html.DisplayNameFor(m => m.ciclo)</dt>
+    <dd>@Html.DisplayFor(m => m.ciclo)</dd>
+</dl>
+<p>
+    @Html.ActionLink("Actualizar", "Actualizar", new { dni = Model.dni }) |
+    @Html.ActionLink("Volver al listado", "Index") 
+</p>

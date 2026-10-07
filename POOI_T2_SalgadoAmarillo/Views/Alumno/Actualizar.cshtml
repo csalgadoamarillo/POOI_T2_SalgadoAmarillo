@@ -1,0 +1,46 @@
+﻿@model POOI_T2_SalgadoAmarillo.Models.Alumno
+@{
+    ViewBag.Title = "Actualizar alumno";
+}
+
+<h2>Actualizar alumno</h2>
+
+@using (Html.BeginForm("Actualizar", "Alumno", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("dniOriginal", (string)ViewBag.DniOriginal)
+
+    <div class="campo">
+        @Html.LabelFor(m => m.dni)
+        @Html.TextBoxFor(m => m.dni, new { required = "required" })
+        @Html.ValidationMessageFor(m => m.dni)
+    </div>
+
+    <div class="campo">
+        @Html.LabelFor(m => m.nombres)
+        @Html.TextBoxFor(m => m.nombres, new { required = "required" })
+        @Html.ValidationMessageFor(m => m.nombres)
+    </div>
+
+    <div class="campo">
+        @Html.LabelFor(m => m.apellidos)
+        @Html.TextBoxFor(m => m.apellidos, new { required = "required" })
+        @Html.ValidationMessageFor(m => m.apellidos)
+    </div>
+
+    <div class="campo">
+        @Html.LabelFor(m => m.carrera)
+        @Html.TextBoxFor(m => m.carrera, new { required = "required" })
+        @Html.ValidationMessageFor(m => m.carrera)
+    </div>
+
+    <div class="campo">
+        @Html.LabelFor(m => m.ciclo)
+        @Html.TextBoxFor(m => m.ciclo, new { type = "number", required = "required" })
+        @Html.ValidationMessageFor(m => m.ciclo)
+    </div>
+
+    <button type="submit">Actualizar</button>
+}
+
+<p>@Html.ActionLink("Volver al listado", "Index")</p>
